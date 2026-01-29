@@ -1,0 +1,41 @@
+How user will navigate and buy the course ? 
+✅ How Purchase Flow Should Work
+Step-1 User logs in
+User gets JWT from User Service
+
+Step-2 User clicks "Buy Course"
+Frontend calls:
+POST /orders/purchase
+Authorization: Bearer <user-token>
+Body: { courseId: "123" }
+This request goes through API Gateway → Order Service
+
+Step-3️ Order Service does the work
+Order Service will:
+Verify JWT (user identity)
+Check course exists (call Course Service OR trust ID)
+Create purchase record in its own DB
+
+Final Flow
+User → API Gateway → Order Service → Order DB
+                         ↓
+                    (optional REST call)
+                         ↓
+                   Course Service
+-----------------------------------------------------------------------------------
+How order purchase service get to know about the new course added ? 
+
+Admin creates course
+        ↓
+Course Service DB save
+        ↓
+📢 Publishes "course.created"
+        ↓
+📥 Order Service receives event
+        ↓
+Stores course snapshot locally
+        ↓
+User buys course
+        ↓
+Order Service creates purchase
+--------------------------------------------------------------------------------
