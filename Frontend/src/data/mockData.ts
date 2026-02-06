@@ -1,0 +1,130 @@
+import { Course } from "@/components/courses/CourseCard";
+
+export const allCourses: Course[] = [
+  {
+    id: "1",
+    title: "Complete Web Development Bootcamp 2024",
+    instructor: "Dr. Angela Yu",
+    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&auto=format&fit=crop&q=60",
+    rating: 4.8,
+    students: 284520,
+    duration: "63 hours",
+    category: "Web Development",
+    level: "Beginner",
+  },
+  {
+    id: "2",
+    title: "Machine Learning A-Z: AI, Python & R",
+    instructor: "Kirill Eremenko",
+    image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&auto=format&fit=crop&q=60",
+    rating: 4.7,
+    students: 198340,
+    duration: "44 hours",
+    category: "Data Science",
+    level: "Intermediate",
+  },
+  {
+    id: "3",
+    title: "React - The Complete Guide 2024",
+    instructor: "Maximilian Schwarzmüller",
+    image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&auto=format&fit=crop&q=60",
+    rating: 4.9,
+    students: 312890,
+    duration: "52 hours",
+    category: "Web Development",
+    level: "Intermediate",
+  },
+  {
+    id: "4",
+    title: "AWS Certified Solutions Architect",
+    instructor: "Stephane Maarek",
+    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&auto=format&fit=crop&q=60",
+    rating: 4.8,
+    students: 156780,
+    duration: "27 hours",
+    category: "Cloud Computing",
+    level: "Advanced",
+  },
+  {
+    id: "5",
+    title: "Python for Data Science and Machine Learning",
+    instructor: "Jose Portilla",
+    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&auto=format&fit=crop&q=60",
+    rating: 4.6,
+    students: 245670,
+    duration: "38 hours",
+    category: "Data Science",
+    level: "Beginner",
+  },
+  {
+    id: "6",
+    title: "iOS App Development with Swift",
+    instructor: "Angela Yu",
+    image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&auto=format&fit=crop&q=60",
+    rating: 4.8,
+    students: 189450,
+    duration: "55 hours",
+    category: "Mobile Development",
+    level: "Beginner",
+  },
+  {
+    id: "7",
+    title: "Advanced JavaScript Concepts",
+    instructor: "Andrei Neagoie",
+    image: "https://images.unsplash.com/photo-1579468118864-1b9ea3c0db4a?w=800&auto=format&fit=crop&q=60",
+    rating: 4.7,
+    students: 167890,
+    duration: "25 hours",
+    category: "Web Development",
+    level: "Advanced",
+  },
+  {
+    id: "8",
+    title: "UI/UX Design Masterclass",
+    instructor: "Daniel Walter Scott",
+    image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&auto=format&fit=crop&q=60",
+    rating: 4.5,
+    students: 134560,
+    duration: "32 hours",
+    category: "Design",
+    level: "Beginner",
+  },
+];
+
+export const enrolledCourses: Course[] = [
+  {
+    ...allCourses[0],
+    progress: 65,
+  },
+  {
+    ...allCourses[2],
+    progress: 32,
+  },
+  {
+    ...allCourses[4],
+    progress: 89,
+  },
+  {
+    ...allCourses[7],
+    progress: 15,
+  },
+];
+
+export const categories = [
+  "All Categories",
+  "Web Development",
+  "Data Science",
+  "Cloud Computing",
+  "Mobile Development",
+  "Design",
+];
+
+export const userData = {
+  name: "Alex Johnson",
+  email: "alex.johnson@email.com",
+  enrolledCourses: 4,
+  completedCourses: 7,
+  hoursLearned: 128,
+  certificates: 5,
+  streak: 12,
+};
