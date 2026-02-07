@@ -29,9 +29,9 @@ Admin creates course
         ↓
 Course Service DB save
         ↓
-📢 Publishes "course.created"
+Publishes "course.created"
         ↓
-📥 Order Service receives event
+Order Service receives event
         ↓
 Stores course snapshot locally
         ↓
@@ -39,3 +39,16 @@ User buys course
         ↓
 Order Service creates purchase
 --------------------------------------------------------------------------------
+Webhooks Implementations 
+
+User buys course → Stripe payment page → Payment success
+→ Stripe sends webhook → Your Order Service verifies it
+→ You mark course as purchased in DB
+→ Publish event to RabbitMQ → Notification service sends email
+
+
+---------------------------------------------------------------------------
+
+Frontend → API Gateway → Order Service → Stripe
+Stripe → Webhook → Order Service → DB save
+Order Service → RabbitMQ → Notification Service
