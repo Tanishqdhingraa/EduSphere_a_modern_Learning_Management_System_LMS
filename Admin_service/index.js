@@ -3,9 +3,9 @@ dotenv.config();
 import express from "express";
 import { Connectionofdb } from "./Db.js";
 import Adminroutes from './routes.js'
-
+import logger from "./Logger.js";
 const app = express();
-const PORT =  1111 ;
+const PORT = process.env.PORT ;
 
 // Test route
 app.get("/test", (req, res) => {
@@ -20,5 +20,5 @@ Connectionofdb()
 
 // 🚀 Start Server
 app.listen(PORT, () => {
-  console.log(`🚀 Admin service running at http://localhost:${PORT}`);
+  logger.info(`🚀 Admin service is running on port http://localhost:${PORT}`);
 });
